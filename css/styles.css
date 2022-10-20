@@ -1,0 +1,52 @@
+body {
+    display: flex; 
+    margin: auto; 
+}
+
+.grid-box { 
+    background-color: white;
+    border-style: solid;
+    border-width: 1px;
+
+}
+
+#grid-container {
+    border-style: solid;
+    border-width: 1px;
+    border-color: red;
+    display: grid;
+    grid-column-start: 1;
+    grid-template-rows: repeat(100, 9.6px);
+    grid-template-columns: repeat(100, 9.6px);
+    width: 960px; 
+    height: 960px; 
+    margin: auto; 
+}
+
+.button-container {
+    height: 960px; 
+    width: 320px; 
+    margin-left: auto; 
+    border-style: solid; 
+    border-color: blue; 
+    display: block; 
+}
+
+.button-space {
+    width: 320px; 
+    border-style: solid;
+    border-color: blueviolet;
+    min-height: 150px;
+
+}
+
+.error {
+    color: red; 
+    opacity: 0; 
+    transition: 0.3s ease-in;
+}
+
+.error.fade{
+    opacity: 1; 
+}
+
