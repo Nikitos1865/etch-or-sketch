@@ -32,7 +32,7 @@ document.getElementById("grid-number").appendChild(errorMessage);
 errorMessage.classList.add("error"); 
 
 document.getElementById('clear-button').addEventListener('click', () => {
-    document.querySelectorAll('.grid-box').forEach(grid => grid.classList.add('clear'));
+    document.querySelectorAll('.grid-box').forEach(grid => grid.style.backgroundColor = 'white');
     draw(); 
 })
 
@@ -48,6 +48,38 @@ window.addEventListener('mouseup',() => {
 })
 
 draw(); 
+
+let eraseOn = false;
+
+let rainbowOn = false; 
+
+document.getElementById('eraser').addEventListener('click', () => {
+    document.getElementById('eraser').classList.toggle('erase-mode');
+})
+
+document.getElementById('rainbow').addEventListener('click', () => {
+    document.getElementById('rainbow').classList.toggle('rainbow-mode');
+})
+
+function checkEraseOn() {
+    if (document.getElementById('eraser').classList.contains("erase-mode")){
+        eraseOn = true; 
+    }
+    else {
+        eraseOn = false; 
+    }
+    return eraseOn; 
+}
+
+function checkRainbowOn() {
+    if (document.getElementById('rainbow').classList.contains("rainbow-mode")){
+        rainbowOn = true; 
+    }
+    else {
+        rainbowOn = false; 
+    }
+    return rainbowOn; 
+}
 
 function readInRows() {
     num = Number(inputSquares.value)
@@ -69,11 +101,16 @@ setGridAmount.addEventListener('click', () => {readInRows()})
 
 function draw() {
     document.querySelectorAll('.grid-box').forEach( grid => grid.addEventListener('mousemove', function draw (){
-        if (mousedown == true){
-            grid.classList.remove('clear');
-            grid.classList.add("color");
+        if (checkEraseOn() == true && mousedown == true) {
+            grid.style.backgroundColor = "white";
         }
-    }));
-}
+        else if (mousedown == true && checkRainbowOn() == true){
+            grid.style.backgroundColor = "rgb("+Math.floor(Math.random() * 255)+","+Math.floor(Math.random() * 255)+","+Math.floor(Math.random() * 255)+")";
+        }
+        else if (mousedown == true){
+            grid.style.backgroundColor = "black";
+        }
+    }))
+};
 
-  
+console.log("rgb("+Math.floor(Math.random() * 255)+","+Math.floor(Math.random() * 255)+","+Math.floor(Math.random() * 255)+")")

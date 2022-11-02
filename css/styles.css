@@ -57,7 +57,16 @@ body {
     background-color: black;
 }
 
-.clear {
-    background-color: white;
+.erase-mode {
+    background-color: darkblue;
+    color: whitesmoke; 
 }
 
+button {
+    border-radius: 25px;
+}
+
+.rainbow-mode {
+    background-color: darkcyan;
+    color: whitesmoke; 
+}
