@@ -70,3 +70,8 @@ button {
     background-color: darkcyan;
     color: whitesmoke; 
 }
+
+.shading-mode {
+    background-color: purple;
+    color: yellow;
+}

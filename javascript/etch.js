@@ -55,11 +55,23 @@ let rainbowOn = false;
 
 document.getElementById('eraser').addEventListener('click', () => {
     document.getElementById('eraser').classList.toggle('erase-mode');
+    document.getElementById('rainbow').classList.remove('rainbow-mode');
+    document.getElementById('shading').classList.remove('shading-mode');
 })
 
 document.getElementById('rainbow').addEventListener('click', () => {
     document.getElementById('rainbow').classList.toggle('rainbow-mode');
+    document.getElementById('eraser').classList.remove('eraser-mode');
+    document.getElementById('shading').classList.remove('shading-mode');
 })
+
+document.getElementById('shading').addEventListener('click', ()=> {
+    document.getElementById('shading').classList.toggle('shading-mode');
+    document.getElementById('eraser').classList.remove('eraser-mode');
+    document.getElementById('rainbow').classList.remove('rainbow-mode');
+})
+
+
 
 function checkEraseOn() {
     if (document.getElementById('eraser').classList.contains("erase-mode")){
@@ -81,6 +93,16 @@ function checkRainbowOn() {
     return rainbowOn; 
 }
 
+function checkShadingOn() {
+    if (document.getElementById('shading').classList.contains("shading-mode")){
+        shadingOn = true; 
+    }
+    else {
+        shadingOn = false; 
+    }
+    return shadingOn; 
+}
+
 function readInRows() {
     num = Number(inputSquares.value)
     if (num <= 100 && num >= 4) {
@@ -99,10 +121,18 @@ function readInRows() {
 
 setGridAmount.addEventListener('click', () => {readInRows()})
 
+
 function draw() {
-    document.querySelectorAll('.grid-box').forEach( grid => grid.addEventListener('mousemove', function draw (){
+    document.querySelectorAll('.grid-box').forEach( grid => {
+        grid.count = 1; 
+        grid.addEventListener('mouseenter', function draw (){
         if (checkEraseOn() == true && mousedown == true) {
             grid.style.backgroundColor = "white";
+        }
+        else if (checkShadingOn() == true && mousedown == true){
+            grid.style.backgroundColor = "black";
+            grid.count++; 
+            grid.style.opacity = 0.1*grid.count;
         }
         else if (mousedown == true && checkRainbowOn() == true){
             grid.style.backgroundColor = "rgb("+Math.floor(Math.random() * 255)+","+Math.floor(Math.random() * 255)+","+Math.floor(Math.random() * 255)+")";
@@ -110,7 +140,9 @@ function draw() {
         else if (mousedown == true){
             grid.style.backgroundColor = "black";
         }
-    }))
-};
+        })
+    }
+    )}
 
-console.log("rgb("+Math.floor(Math.random() * 255)+","+Math.floor(Math.random() * 255)+","+Math.floor(Math.random() * 255)+")")
+
+
