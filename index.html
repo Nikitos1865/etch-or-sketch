@@ -8,16 +8,22 @@
     <script src="javascript/etch.js" defer></script>
     <link rel="stylesheet" href="css/styles.css">
 </head>
+<h2>Etch and Sketch</h2>
 <body>
     <div class="grid-box"></div>
     <div class="button-container">
-        <div class="button-space" id="grid-number">Input how many squares you want on each side between 4 and 100<br><br> 
-
+        <div id="grid-number">Input how many squares you want on each side between 4 and 100<br><br></div>
+        <div class="button-space"><button id="clear-button">Clear the Board</button></div>
+        <div class="button-space">
+            <button class="button" id="eraser">Eraser</button>
         </div>
-        <div class="button-space"> Erase the board! <br> <button id="clear-button">Clear</button></div>
-        <div class="button-space" id="toggle-eraser"><button id="eraser">Eraser</button></div>
-        <div class="button-space"><button id="rainbow">Rainbow Mode</button></div>
-        <div class="button-space"><button id="shading">Shading</button></div>
+        <div class="button-space">
+            <button class="button" id="rainbow">Rainbow Mode</button>
+        </div>
+        <div class="button-space">
+            <button class="button" id="shading">Shading Mode</button>
+        </div>
+        
         <div class="button-space"></div>
     </div>
 </body>
