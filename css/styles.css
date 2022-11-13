@@ -60,17 +60,7 @@ h2 {
 }
 
 
-#clear-button {
-    font-size: small;
-    padding-top: 10px; 
-    padding-bottom: 10px; 
-    padding-left: 30px; 
-    padding-right: 30px; 
-    border-radius: 12px; 
-    font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
-    color: beige;
-    background-color: darkblue; 
-}
+
 
 .button {
     font-size: small;
@@ -82,6 +72,10 @@ h2 {
     font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
     color: beige;
     background-color: darkblue; 
+}
+
+button:hover {
+    background-color: grey;
 }
 
 .error {

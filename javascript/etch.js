@@ -137,16 +137,16 @@ function draw() {
     document.querySelectorAll('.grid-box').forEach( grid => {
         grid.count = 1; 
         grid.addEventListener('mouseenter', function draw (){
-        if (checkEraseOn() == true && mousedown == true) {
+        if (checkEraseOn() == true && !mousedown == false) {
             grid.style.opacity = 1;
             grid.style.backgroundColor = "white";
         }
-        else if (checkShadingOn() == true && mousedown == true){
+        else if (checkShadingOn() == true && !mousedown == false){
             grid.style.backgroundColor = "black";
             grid.count++; 
             grid.style.opacity = 0.1*grid.count;
         }
-        else if (mousedown == true && checkRainbowOn() == true){
+        else if (!mousedown == false && checkRainbowOn() == true){
             grid.style.opacity = 1; 
             grid.style.backgroundColor = "rgb("+Math.floor(Math.random() * 255)+","+Math.floor(Math.random() * 255)+","+Math.floor(Math.random() * 255)+")";
         }
@@ -169,6 +169,8 @@ function draw() {
     footer.style.width = "300px";
     footerDiv.style.justifyContent = "center"
     footerDiv.style.marginTop = "-20px;"
+    footerDiv.style.marginBottom = "15px"
+    footerDiv.style.color = "beige"
 
 
 
