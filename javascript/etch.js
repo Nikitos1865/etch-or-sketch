@@ -9,6 +9,7 @@ let numGrids = numRows**2;
 
 function createGrids(num) {
     for(let i = 0; i<num; i++) {
+        console.log(num)
         let grid = document.createElement('div');
         grid.className = "grid-box";
         gridContainer.appendChild(grid);
@@ -158,19 +159,7 @@ function draw() {
     }
     )}
 
-    const footerDiv = document.createElement('div');
-    const footer = document.createElement('footer');
-    footerDiv.appendChild(footer);
-    document.body.appendChild(footerDiv);
-    footer.textContent = "Copyright 2022 Nikita Angarski";
-    footerDiv.style.flexWrap = "wrap";
-    footerDiv.style.marginLeft = "45%";
-    footerDiv.style.marginRight = "50%"
-    footer.style.width = "300px";
-    footerDiv.style.justifyContent = "center"
-    footerDiv.style.marginTop = "-20px;"
-    footerDiv.style.marginBottom = "15px"
-    footerDiv.style.color = "beige"
+
 
 
 
