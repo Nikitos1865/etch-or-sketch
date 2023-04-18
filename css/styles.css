@@ -110,3 +110,12 @@ button {
     background-color: purple;
     color: yellow;
 }
+
+#footer {
+    position: relative;
+    width: 100%;
+    bottom: 0;
+    top: 97%;
+    color: whitesmoke;
+    font-size: larger; 
+}
