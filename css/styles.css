@@ -1,20 +1,21 @@
 body {
     display: flex; 
-    flex-wrap: wrap;
-    margin: auto;
+    flex-wrap: nowrap;
+    margin-top: 5%;
+    margin-right: 5%;
+    margin-bottom: 5%;
+    margin-left: 0%;
     background-color: lightslategray; 
 }
 
 .grid-box { 
     background-color: white;
     border-style: solid;
-    border-width: 1px;
+    border-width: .25px;
 }
 
 h2 {
-    height: 20px;
-    position: absolute;
-    left: 13%;
+    height: 20px; 
     color: ghostwhite; 
 }
 
@@ -25,31 +26,30 @@ h2 {
     border-color: darkblue;
     display: grid;
     grid-column-start: 1;
-    grid-template-rows: repeat(50, 19.2px);
-    grid-template-columns: repeat(50, 19.2px);
-    width: 960px; 
-    height: 960px; 
+    grid-template-rows: repeat(50, 12px);
+    grid-template-columns: repeat(50, 12px); 
     margin-left: auto; 
     margin-right: auto;
     margin-bottom: auto;
     margin-top: 20px;
     cursor: crosshair; 
     margin-left: -10%; 
+    margin-right: 10%;
 }
 
 .button-container {
-    padding-top: 100px;
+    padding-top: 0px;
     height: 960px; 
     width: 320px;
     padding-left: 40px; 
     margin-left: auto;  
     display: block; 
-    margin-right: 23%; 
+    margin-right: 13%; 
 }
 
 .button-space {
     width: 320px; 
-    min-height: 150px; 
+    min-height: 10%; 
     text-align: center;
 }
 
@@ -113,9 +113,17 @@ button {
 
 #footer {
     position: relative;
-    width: 100%;
+    width: 200px;
+    height: 2.5rem;
     bottom: 0;
-    top: 97%;
     color: whitesmoke;
-    font-size: larger; 
+    font-size: smaller; 
+}
+
+.last-div {
+    position: absolute;
+    width: 200px;
+    margin-top: 77%;
+    margin-left: 50%;
+    margin-right: auto;
 }

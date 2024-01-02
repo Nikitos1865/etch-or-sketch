@@ -119,8 +119,10 @@ function readInRows() {
     num = Number(inputSquares.value)
     if (num <= 100 && num >= 4) {
         document.querySelectorAll(".grid-box").forEach(el => el.remove());
-        document.getElementById('grid-container').style.gridTemplateColumns = "repeat("+num+","+960/num+"px)";
-        document.getElementById('grid-container').style.gridTemplateRows = "repeat("+num+","+960/num+"px)";
+        const elemWidth = document.getElementById("grid-container").offsetWidth;
+        alert('this is the width'+ elemWidth);
+        document.getElementById('grid-container').style.gridTemplateColumns = "repeat("+num+","+elemWidth/num+"px)";
+        document.getElementById('grid-container').style.gridTemplateRows = "repeat("+num+","+elemWidth/num+"px)";
         createGrids(num**2);
         draw(); 
     }
@@ -158,6 +160,20 @@ function draw() {
         })
     }
     )}
+
+    const lastDiv = document.createElement('div');
+    lastDiv.className = 'last-div';
+    const footer = document.createElement("FOOTER");
+    footer.id = 'footer';
+    document.body.appendChild(lastDiv);
+    const p = document.createTextNode("Nikita Angarski, 2023");
+    footer.appendChild(p);
+    lastDiv.appendChild(footer);
+    document.body.appendChild(lastDiv);
+
+    
+    
+
 
 
 
